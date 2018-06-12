@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				// 开始获取网页文档中的元素节点
+				var name_input = document.querySelector("#name");
+				var age_input = document.getElementById("age");
+				var sex_input = document.getElementById("sex");
+				var save_btn = document.getElementById("save");
+				var table = document.getElementById("list");
+				
+				// 点击保存按钮
+				save_btn.onclick = function(){
+					var messages = [name_input.value, age_input.value, sex_input.value, "删除"];
+					// 创建一行
+					var tr_node = document.createElement("tr");
+					for(var i = 0; i < messages.length; i++){
+						// 创建列
+						var td_node = document.createElement("td");
+						td_node.innerText = messages[i];
+						// 将列添加在行上
+						tr_node.appendChild(td_node);
+						if(i == messages.length - 1){
+							td_node.onclick = function(){
+								// 将其对应的行删除
+								table.removeChild(this.parentNode);
+							}
+						}
+					}
+					
+					// 将行添加在表格上
+					table.appendChild(tr_node);
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<span>姓名:</span> <input id="name" type="text" placeholder="姓名" />
+		<br />
+		<br />
+		<span>年龄:</span> <input id="age" type="text" placeholder="年龄" />
+		<br />
+		<br />
+		<span>性别:</span> <input id="sex" type="text" placeholder="性别" />
+		<br />
+		<br />
+		<button id="save">保存</button>
+		<br />
+		<br />
+		<table border="1" width="600px" id="list" style="text-align: center;">
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>操作</th>
+			</tr>
+		</table>
+		
+	</body>
+</html>
