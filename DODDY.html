@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOGGY for your lovely baby</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				box-sizing: border-box;
+			}
+			body{
+				width: 1093px;
+			}
+			.one{
+				height: 450px;
+				background-color: darkgoldenrod;
+			}
+			.top{
+				float: left;
+			}
+			.logo{
+				width: 30%;
+				padding: 30px;
+				margin-top: 10px;
+			}
+
+			.logo h1{
+				font-size: 60px;
+				color: white;
+				margin: 0;
+				transition: all 0.2s;
+			}
+			.logo h1:hover{
+				cursor: pointer;
+				transform: scale(1.01);
+			}
+			.menu{
+				width: 70%;
+				float: left;
+				padding: 40px 50px 50px 0;
+				margin-top: 15px;
+			}
+			.menu li{
+				width: 19%;
+				display: inline-block;
+				padding: 5px;
+				text-align: center;
+				transition: all 0.3s;
+			}
+			.menu li:hover{
+				border-bottom: solid 2px white;
+				transform: scale(1.05);
+			}
+			.menu li a{
+				line-height: 100%;
+				text-align: center;
+				color: white;
+				font-size: 20px;
+				font-family: "微软雅黑";
+				text-decoration: none;
+			}
+			.menu .active{
+				border-bottom: solid 2px white;
+			}
+			hr{
+				width: 100%;
+				color: olivedrab;
+			}
+			.content{
+				clear: both;
+			}
+			.column{
+				float: left;
+			}
+			.pic{
+				width: 50%;
+				padding: 20px;
+			}
+			.righttext{
+				width: 50%;
+				padding: 30px;
+			}
+			.subject, .words{
+				padding: 10px;
+				color: white;
+			}
+			.footbutton{
+				line-height: 10px;
+				text-align: center;
+				width: 200px;
+				height: 60px;
+				padding: 20px;
+				margin: 20px 0 0 10px;
+				font-size: 10px;
+				background-color: darkgoldenrod;
+				border: solid 2px white;
+				color: white;
+				transition: all 0.3s;
+			}
+			.footbutton:hover{
+				background-color: white;
+				color: darkgoldenrod;
+				cursor: pointer;
+			}
+			.pic img{
+				width: 100%;
+				margin: 20px;
+				border: solid 8px white;
+				transition: all 0.3s;
+			}
+			.pic img:hover{
+				transform: scale(1.05);
+				cursor: pointer;
+			}
+			.two{
+				height: 550px;
+				background-color:gainsboro;
+			}
+			.name{
+				float: left;
+				width: 33%;
+				text-align: center;
+				padding: 20px;
+				margin: 30px 0 30px 0;
+				color: darkgoldenrod;
+			}
+			.picture{
+				clear: both;
+			}
+			.pic1{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.buttom{
+				width: 320px;
+				height: 320px;
+				background-color: darkgoldenrod;
+				border-radius: 50%;
+			}
+			.mid{
+				position: absolute;
+				left: 0;
+				top:0;
+				width: 160px;
+				height: 160px;
+				background-color: gainsboro;
+			}
+			.up img{
+				position: absolute;
+				left: 10px;
+				top: 10px;
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+			}
+			.pict{
+				width: 33%;
+				position: relative;
+				float: left;
+				transition: all 0.3s;
+			}
+			.pict:hover{
+				transform: scale(1.01);
+				cursor: pointer;
+			}
+			.mores{
+				clear: both;
+			}
+			.more{
+				float: left;
+				width: 33%;
+				text-align: center;
+				padding: 20px;
+				margin: 30px 0 30px 0;
+				color: darkgoldenrod;
+			}
+			.more a{
+				text-decoration: none;
+				color: darkslateblue;
+				border-bottom:dashed 1px dimgrey;
+				padding: 5px;
+				transition: border-left-width;.3s
+			}
+			.more a:hover{
+				color: darkgoldenrod;
+			}
+			.three{
+				height: 500px;
+				background-color: white;
+			}
+			.ourgallery{
+				float: left;
+				color: darkgoldenrod;
+				margin: 10px 10px 10px 30px;
+				padding: 10px 10px 20px 30px;
+			}
+			.ourgallery:hover{
+				cursor: pointer;
+			}
+			.categorie{
+				clear: both;
+				float: right;
+				margin: 0 50px 10px 0;
+			}
+			.categorie li{
+				display: inline-block;
+				padding: 10px 20px;
+				margin: 5px;
+				background-color: darkgoldenrod;
+				transition: all 0.3s;
+			}
+			.categorie li:hover{
+				background-color: dimgray;
+			}
+			.categorie .active1{
+				background-color: dimgray;
+			}
+			.categorie li a{
+				text-decoration: none;
+				color: white;
+			}
+			.imglist{
+				clear: both;
+				text-align: center;
+			}
+			.piclist{
+				width: 20%;
+				height: 120px;
+				margin: 10px;
+				text-align: center;
+				filter: grayscale(1);
+				transition: all 0.3s;
+			}
+			.piclist:hover{
+				transform: scale(1.03);
+				cursor: pointer;
+				filter: none;
+			}
+			.four{
+				height: 700px;
+				background-color: gainsboro;
+			}
+			.simply{
+				height: 10%;
+				margin: 20px 20px 0 20px;
+			}
+			.simmenu{
+				float: left;
+				width: 50%;
+				color: darkgoldenrod;
+				padding: 20px 20px 0 20px;
+				font-size: 13px;
+			}
+			.contentlst{
+				height: 50%;
+				clear: both;
+				color: gray;
+			}
+			.conlst{
+				float: left;
+				width: 50%;
+				padding: 30px 20px 30px 30px;
+			}
+			.leftdate, .rightcontent{
+				float: left;
+			}
+			.leftdate{
+				padding: 20px 0;
+				margin: 0;
+				width: 20%;
+				border-right:solid 1px darkgray;
+			}
+			.leftdate h1{
+				font-size: 50px;
+			}
+			.date{
+				text-align: left;
+				margin: 0;
+				padding: 0;
+				color: darkslategrey;
+			}
+			.month{
+				text-align: center;
+			}
+			.rightcontent{
+				padding: 30px 20px;
+				margin: 0;
+				width: 80%;
+			}
+			.tips{
+				clear: both;
+				width: 90%;
+				height: 25%;
+				background-color: white;
+				position: relative;
+				left: 3%;
+			}
+			.toptip{
+				position: relative;
+				left: 5%;
+			}
+			.toptip .top{
+				float: both;
+			}
+			.toptip .left{
+				padding: 20px;
+				margin: 0;
+				border-right: solid 1px darkgray;
+				10%
+			}
+			.toptip .right{
+				padding: 30px 0 30px 30px;
+				90%
+				display: inline-block;
+				color: dimgray;
+			}
+			.toptip img{
+				padding: 20px;
+				margin: 0;
+			}
+			.buttomleft{
+				clear: both;
+				float: left;
+				position: relative;
+				left: 5%;
+				padding: 5px;
+				color: gray;
+			}
+			.five{
+				height: 200px;
+				background-color: darkgoldenrod;
+				color: white;
+			}
+			.foot{
+				float: left;
+				width: 33%;
+				padding: 30px 30px 0 30px;
+				text-align: left;
+			}
+			.foot1{
+				margin-top:20px ;
+				padding-top:0 ;
+			}
+			.foot2{
+				margin-top:35px ;
+				padding-top:0 ;
+			}
+			.foot3{
+				padding-top:20px ;
+			}
+			.footcontact .footlogo{
+				font-size: 65px;
+				padding: 0;
+			}
+			.designer{
+				clear: both;
+				text-align: center;
+				padding-top: 20px;
+			}
+			.addr, .tele{
+				text-align: left;
+				
+			}
+			.info img, .info p{
+				padding: 10px;
+			}
+			.addr1{
+				float: left;
+			}
+			.tele{
+				clear: both;
+			}
+			.tele1{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">
+			<div class="topelement">
+				<div class="top logo">
+					<h1 title="Doggy">DOGGY</h1>
+				</div>
+				<div class="top menu">
+					<ul>
+						<li class="active"><h2><a href="#home" title="Homepage">HOME</a></h2></li>
+						<li><h2><a href="#about" title="About Us">ABOUT</a></h2></li>
+						<li><h2><a href="#services" title="For Services">SERVICES</a></h2></li>
+						<li><h2><a href="#gallery" title="Gallery">GALLERY</a></h2></li>
+						<li><h2><a href="#contact" title="Contact Us">CONTACT</a></h2></li>
+					</ul>
+				</div>
+			</div>
+			<hr />
+			<div class="content">
+				<div class="column pic">
+					<img src="images/banner1.jpg" title="Golden Retriever" />
+				</div>
+				<div class="column righttext">
+					<div class="text subject">
+						<h2>LOREM IPSUM IS SIMPLY DUMMY</h2>
+					</div>
+					<div class="text words">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+					</div>
+					<button type="button" class="footbutton" title="For More Information"><h2>READ MORE</h2></button>
+					</div>
+			</div>
+		</div>	
+		<div class="two">
+			<div class="names">
+				<div class="name name1"><h2>BEAUTIFUL LADY</h2></div>
+				<div class="name name2"><h2>LOVELY BABY</h2></div>
+				<div class="name name3"><h2>SEXY HONEY</h2></div>
+			</div>
+			<div class="picture">
+				<div class="pict pic1">
+					<div class="buttom"></div>
+					<div class="mid"></div>
+					<div class="up">
+						<img src="../Day25作业-Python1805范恒宇/images/pic.jpg" title="Beautiful Lady"/>
+					</div>
+				</div>
+				<div class="pict pic2">
+					<div class="buttom"></div>
+					<div class="mid"></div>
+					<div class="up">
+						<img src="../Day25作业-Python1805范恒宇/images/pic1.jpg" title="Lovely Baby"/>
+					</div>
+				</div>
+				<div class="pict pic3">
+					<div class="buttom"></div>
+					<div class="mid"></div>
+					<div class="up">
+						<img src="../Day25作业-Python1805范恒宇/images/pic2.jpg" title="Sexy Honey"/>
+					</div>
+				</div>
+			</div>
+			<div class="mores">
+				<div class="more more1">
+					<h3>
+						<a href="#more" title="View More">VIEW MORE</a>
+					</h3>
+				</div>
+				<div class="more more2">
+					<h3>
+						<a href="#more" title="View More">VIEW MORE</a>
+					</h3>
+				</div>
+				<div class="more more3">
+					<h3>
+						<a href="#more" title="View More">VIEW MORE</a>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="three">
+			<div class="ourgallery" title="Our Gallery">
+				<h1>OUR GALLERY</h1>
+			</div>
+			<div class="categorie">
+				<ul>
+					<li class="active1"><a href="#categorie1" title="Categorie1">CATEGORIE1</a></li>
+					<li><a href="#categorie2" title="Categorie2">CATEGORIE2</a></li>
+					<li><a href="#categorie3" title="Categorie3">CATEGORIE3</a></li>
+					<li><a href="#categorie4" title="Categorie4">CATEGORIE4</a></li>
+				</ul>
+			</div>
+			<div class="imglist">
+				<img class="piclist lst1" src="images/pic4.jpg" title="Picture1" />
+				<img class="piclist lst2" src="images/t-pic5.jpg" title="Picture2" />
+				<img class="piclist lst3" src="images/t-pic6.jpg" title="Picture3" />
+				<img class="piclist lst4" src="images/t-pic7.jpg" title="Picture4" />
+				<img class="piclist lst5" src="images/t-pic23.jpg" title="Picture5" />
+				<img class="piclist lst6" src="images/t-pic9.jpg" title="Picture6" />
+				<img class="piclist lst7" src="images/t-pic10.jpg" title="Picture7" />
+				<img class="piclist lst8" src="images/t-pic3.jpg" title="Picture8" />
+			</div>
+		</div>
+		<div class="four">
+			<div class="simply">
+				<div class="simmenu leftsim"><h1>LOREM IPSUM IS SIMPLY</h1></div>
+				<div class="simmenu rightsim"><h1>LOREM IPSUM IS SIMPLY</h1></div>
+			</div>
+			<div class="contentlst">
+				<div class="conlst conlst1">
+					<div class="leftdate">
+						<h1 class="date">21</h1>
+						<p class="month">NOV</p>
+					</div>
+					<div class="rightcontent">
+						<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean non.</p>
+					</div>
+				</div>
+				<div class="conlst conlst2">
+					<div class="leftdate">
+						<h1 class="date">21</h1>
+						<p class="month">NOV</p>
+					</div>
+					<div class="rightcontent">
+						<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean non.</p>
+					</div>
+				</div>
+				<div class="conlst conlst3">
+					<div class="leftdate">
+						<h1 class="date">21</h1>
+						<p class="month">NOV</p>
+					</div>
+					<div class="rightcontent">
+						<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean non.</p>
+					</div>
+				</div>
+				<div class="conlst conlst4">
+					<div class="leftdate">
+						<h1 class="date">21</h1>
+						<p class="month">NOV</p>
+					</div>
+					<div class="rightcontent">
+						<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean non.</p>
+					</div>
+				</div>
+			</div>
+			<div class="tips">
+				<div class="toptip">
+					<div class="top left">
+						<img src="images/comment.png" />
+					</div>
+					<div class="top right">
+						<p>“Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce <br />suscipit varius mi. ”</p>
+					</div>
+				</div>
+				<div class="buttomleft">
+					<p>Jessica Priston, USA</p>
+				</div>
+			</div>
+		</div>
+		<div class="five">
+			<div class="footcontact">
+				<div class="foot foot1">
+					<h1 class="footlogo">DOGGY</h1>
+				</div>
+				<div class="foot foot2">
+					<div class="phone ph1">
+						<p>+91-123-456789</p>
+					</div>
+					<div class="phone ph2">
+						<p>+00-123-000000</p>
+					</div>
+				</div>
+				<div class="foot foot3">
+					<div class="info addr">
+						<img class="addr1" src="images/home.png"/>
+						<p class="addr1">Lorem ipsum consectetu,<br />dolor sit amet,.</p>
+					</div>
+					<div class="info tele">
+						<img class="tele1" src="images/phone.png"/>
+						<p class="tele1">Telephone:+1 800 258 2598<br />FAX:+1 800 589 2587</p>
+					</div>
+				</div>
+			</div>
+			<div class="designer">Design by Fan Hengyu</div>
+		</div>
+	</body>
+</html>
